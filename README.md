@@ -1,2 +1,2 @@
 # Digital-Image-processing
-I wrote these codes when I was studying Digital Image processing in my graduation.
+This repository contains codes for Digital Image processing learn't at the time of my graduation.
