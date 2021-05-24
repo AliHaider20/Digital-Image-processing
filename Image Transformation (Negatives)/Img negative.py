@@ -1,5 +1,5 @@
 import matplotlib.pyplot as plt
-import numpy as np
+
 img = plt.imread('Original.jpg')
 
 img = img.copy()
@@ -13,10 +13,13 @@ maxPix = max(maxPixs)
 for gray_intensity in range(10):
    if (2**gray_intensity-1) == maxPix:
       break
+      
 L = 2**gray_intensity - 1
 print("Image Intensity :",L)
+
 choice = input('According to which channel Img negative is needed red, blue, green or all: ')
 choice = choice.lower()
+
 def MakeNeg (img,L,channel):
    if channel == 'red':
       ch = img[:,:,0]
@@ -51,8 +54,8 @@ def MakeNeg (img,L,channel):
       for row in range(len(ch[:])):
          for col in range(len(ch[0,:])):
             ch[row,col] = 255 - ch[row,col]
-
+            
    return ch
 
 channel_neg = MakeNeg(img,L,choice)
-plt.imsave('Img Negative acc to {0} channel.jpg'.format(choice),img)
+plt.imsave(f'Img Negative acc to {choice} channel.jpg',img)
